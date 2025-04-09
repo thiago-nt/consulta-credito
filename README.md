@@ -23,3 +23,7 @@ src/
 
 Usando in-memory-web-api para simular mock da apis.
 
+Cobertura de testes com Jasmine e Karma.
+ng test --code-coverage
+
+

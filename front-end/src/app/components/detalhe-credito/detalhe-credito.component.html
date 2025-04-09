@@ -1,7 +1,8 @@
-<div *ngIf="credito">
+<div *ngIf="credito as c">
   <h2>Detalhes do Crédito</h2>
-  <p><strong>Número Crédito:</strong> {{ credito.numeroCredito }}</p>
-  <p><strong>Data Constituição:</strong> {{ credito.dataConstituicao }}</p>
-  <p><strong>Valor ISSQN:</strong> {{ credito.valorIssqn | currency }}</p>
-  <p><strong>Tipo Crédito:</strong> {{ credito.tipoCredito }}</p>
+  <p><strong>Número Crédito:</strong> {{ c.numeroCredito }}</p>
+  <p><strong>Data Constituição:</strong> {{ c.dataConstituicao }}</p>
+  <p><strong>Valor ISSQN:</strong> {{ c.valorIssqn | currency }}</p>
+  <p><strong>Tipo Crédito:</strong> {{ c.tipoCredito }}</p>
 </div>
+

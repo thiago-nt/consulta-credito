@@ -2,13 +2,12 @@ package com.consulta.credito.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -18,35 +17,45 @@ import java.time.LocalDate;
 public class Credito {
 
   @NotNull
+  @Schema(example = "CR123456789")
   private String numeroCredito;
 
   @NotNull
+  @Schema(example = "NFSE987654321")
   private String numeroNfse;
 
   @NotNull
   @Valid
+  @Schema(example = "2024-04-01", type = "string", format = "date")
   private LocalDate dataConstituicao;
 
   @NotNull
-  private Double valorIssqn;
+  @Schema(example = "1500.00")
+  private BigDecimal valorIssqn;
 
   @NotNull
+  @Schema(example = "ISSQN")
   private String tipoCredito;
 
   @NotNull
+  @Schema(example = "Sim", allowableValues = {"Sim", "Não"})
   private SimplesNacionalEnum simplesNacional;
 
   @NotNull
-  private Double aliquota;
+  @Schema(example = "0.05")
+  private BigDecimal aliquota;
 
   @NotNull
-  private Double valorFaturado;
+  @Schema(example = "30000.00")
+  private BigDecimal valorFaturado;
 
   @NotNull
-  private Double valorDeducao;
+  @Schema(example = "2000.00")
+  private BigDecimal valorDeducao;
 
   @NotNull
-  private Double baseCalculo;
+  @Schema(example = "28000.00")
+  private BigDecimal baseCalculo;
 
   public enum SimplesNacionalEnum {
     SIM("Sim"),
@@ -71,7 +80,7 @@ public class Credito {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Valor inválido para SimplesNacionalEnum: " + text);
     }
   }
 }

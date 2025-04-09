@@ -4,6 +4,6 @@
 <ul *ngIf="creditos.length">
   <li *ngFor="let c of creditos">
     {{ c.numeroCredito }} - {{ c.valorIssqn | currency }}
-    <a [routerLink]="['/detalhe', c.numeroCredito]">Ver detalhes</a>
+    <a [routerLink]="['/credito', c.numeroCredito]">Ver detalhes</a>
   </li>
 </ul>

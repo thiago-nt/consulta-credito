@@ -1,14 +1,12 @@
 package com.consulta.credito.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
-@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "credito")
 public class CreditoEntity {

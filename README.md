@@ -2,19 +2,15 @@
 # Tecnologias utilizadas:
 Angula version 19.2.6.
 
-
 1- Iniciando o front-end
    npm run start 
    Browser: http://localhost:4200/
-
-
-Usando in-memory-web-api para simular mock da apis.
 
 2- Para roda a cobertura de testes com Jasmine e Karma.
    ng test --code-coverage
    Projeto com 100% de cobertura de testes.
 
-
+OBS: Foi criado mock para as apis, utilizado in-memory-web-api para simular mock da apis.
 
 # BackEnd
 # Tecnologias utilizadas:
